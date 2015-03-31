@@ -1,13 +1,5 @@
 var FaceDancer = function(top, left, timeBetweenSteps){
   BlinkyDancer.apply(this, arguments);
-  this.$node = $('<img class="dancer death" src="face.png" width="150px"/>');
-  this.timeBetweenSteps = timeBetweenSteps;
-  this.setPosition(top, left);
-  this.oldTop = top;
-  var selfish = this.selfishMode.bind(this);
-  this.$node.on('click', function(){
-    selfish();
-  });
   $('.death').on('mouseover', function(){
     console.log('here!');
     // debugger;
@@ -17,6 +9,14 @@ var FaceDancer = function(top, left, timeBetweenSteps){
     console.log('here!');
     // debugger;
     $(this).css('transform', 'rotate(0deg)');
+  });
+  this.$node = $('<img class="dancer death" src="face.png" width="150px"/>');
+  this.timeBetweenSteps = timeBetweenSteps;
+  this.setPosition(top, left);
+  this.oldTop = top;
+  var selfish = this.selfishMode.bind(this);
+  this.$node.on('click', function(){
+    selfish();
   });
 };
 

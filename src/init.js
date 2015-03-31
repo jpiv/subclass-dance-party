@@ -34,5 +34,16 @@ $(document).ready(function(){
     $('body').append(dancer.$node);
   });
 
+    $('.death').on('mouseover', function(){
+    console.log('here!');
+    // debugger;
+    $(this).css('transform', 'rotate(14deg)');
+  });
+  $('.death').on('mouseleave', function(){
+    console.log('here!');
+    // debugger;
+    $(this).css('transform', 'rotate(0deg)');
+  });
+
 });
 
