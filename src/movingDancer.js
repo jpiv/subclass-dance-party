@@ -1,34 +1,25 @@
 var MovingDancer = function(top, left, timeBetweenSteps){
   Dancer.apply(this, arguments);
   this.top = top;
+  this.left = left;
   this.iterate = 0;
   this.moved = false;
-  this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
-  this.step();
 };
 MovingDancer.prototype = Object.create(Dancer.prototype);
+
 MovingDancer.prototype.constructor = MovingDancer;
 
 MovingDancer.prototype.oldStep = Dancer.prototype.step;
 
 MovingDancer.prototype.step = function(){
-  if(this.iterate === 2)
-  {
-      if(this.moved)
-      {
-        this.top -= 20;
-        this.moved = false;
-        this.setPosition(this.top, this.left);
-      }
-      else
-      {
-        this.top += 20;
-        this.moved = true;
-        this.setPosition(this.top, this.left);
-      }
-    this.iterate=0;
+  if(this.moved){
+    this.top -= 40;
+    this.moved = false;
+  } else {
+    this.top += 40;
+    this.moved = true;
   }
-  this.iterate ++;
+  this.setPosition(this.top, this.left);
   this.oldStep();
 }

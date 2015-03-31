@@ -13,6 +13,9 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+img{
+  position: absolute;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -20,8 +23,10 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+.dot {
   border:10px solid red;
   border-radius:10px;
+}
+.dancer{
   position:absolute;
 }
