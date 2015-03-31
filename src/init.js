@@ -33,5 +33,23 @@ $(document).ready(function(){
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+  console.log($('.death'))
+  $(".death").on('click', function(){
+    console.log('hi john');
+    var top = Number(this.$node.css('top').slice(0,7));
+    var left = Number(this.$node.css('left').slice(0,7));
+    var closestNode, nodeTop, nodeLeft, closest = 100000, distance;
+    for(var i = 0; i < window.dancers.length; i++){
+      nodeTop = Number(window.dancers[i].$node.css('top').slice(0,7));
+      nodeLeft = Number(window.dancers[i].$node.css('left').slice(0,7));
+      distance = Math.sqrt(Math.pow(nodeLeft-left, 2) + Math.pow(nodeTop-top, 2));
+      if(distance < closest){
+        closestNode = window.dancers[i].$node;
+        closest = distance;
+      }
+    }
+    closestNode.css("left", 0);
+  });
+
 });
 
