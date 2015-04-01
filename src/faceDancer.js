@@ -29,5 +29,9 @@ FaceDancer.prototype.selfishMode = function(){
 };
 
 var flip = function(){
+  if($('.willysmith').hasClass('flip180')){
+    $('.willysmith').removeClass('flip180');
+  }else{
     $('.willysmith').addClass('flip180');
+  }
 };
