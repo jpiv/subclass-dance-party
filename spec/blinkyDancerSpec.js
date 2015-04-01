@@ -33,3 +33,34 @@ describe("blinkyDancer", function() {
     });
   });
 });
+
+describe("Willy Boy", function() {
+
+  var faceDancer;
+
+  beforeEach(function(){
+    faceDancer = new FaceDancer(10, 20, 100);
+  });
+
+  it('should instantiate new FaceDancer', function(){
+    expect(faceDancer.constructor).to.equal(FaceDancer);
+  });
+  it('should contain "selfishMode" method', function(){
+    expect(faceDancer.selfishMode).to.equal(FaceDancer.prototype.selfishMode);
+  })
+
+});
+
+describe("Moove that booty", function() {
+
+  var movingDancer;
+
+  beforeEach(function(){
+    movingDancer = new MovingDancer(10, 20, 100);
+  });
+
+  it('should instantiate new MovingDancer', function(){
+    expect(movingDancer.constructor).to.equal(MovingDancer);
+  });
+
+});
